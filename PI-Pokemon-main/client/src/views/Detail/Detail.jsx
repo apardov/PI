@@ -9,9 +9,9 @@ const Detail = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const pokemonDetail = useSelector((state) => state.pokemonDetails);
-  useEffect(() => {
-    dispatch(getPokemonById(id));
-  }, [dispatch, id]);
+      useEffect(() => {
+        dispatch(getPokemonById(id));
+      }, [dispatch, id]);
 
   return (
     <div>
