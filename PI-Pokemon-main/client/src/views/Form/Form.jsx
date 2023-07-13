@@ -16,6 +16,19 @@ const Form = () => {
     types: [],
   });
 
+
+  const [errors, setErrors] = useState({
+    name: "",
+    img: "",
+    hp: "",
+    attack: "",
+    defense: "",
+    speed: "",
+    height: "",
+    weight: "",
+    types: "",
+  });
+
   const [typeOptions, setTypeOptions] = useState([]);
 
   useEffect(() => {
@@ -63,7 +76,7 @@ const Form = () => {
           <label htmlFor="name">Name</label>
           <input type="text" name="name" id="name" value={pokemonForm.name} placeholder="Pokemon Name" onChange={handleChange} />
           <label htmlFor="img">Image</label>
-          <input type="text" name="img" id="img" value={pokemonForm.img} placeholder="Pokemon Image" onChange={handleChange} />
+          <input type="text" name="img" id="img" value={pokemonForm.img} placeholder="Pokemon URL Image" onChange={handleChange} />
           <label htmlFor="hp">HP</label>
           <input type="number" name="hp" id="hp" value={pokemonForm.hp} placeholder="Pokemon HP" onChange={handleChange} />
           <label htmlFor="attack">Attack</label>
