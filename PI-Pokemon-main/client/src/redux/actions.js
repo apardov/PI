@@ -1,11 +1,13 @@
+
+// Importaciones de dependencias
 import axios from 'axios';
 
+// Constantes
 export const GET_POKEMONS = 'GET_POKEMONS';
 export const GET_POKEMON_BY_ID = 'GET_POKEMON_BY_ID';
 export const GET_POKEMON_BY_NAME = 'GET_POKEMON_BY_NAME';
-export const SORT_POKEMONS = 'SORT_POKEMONS';
 
-
+// Funcion (actions) que obtienen los datos de todos los pokemon de la API
 export const getPokemons = () => {
 
     return async function(dispatch){
@@ -15,6 +17,7 @@ export const getPokemons = () => {
     }
 };
 
+// Funcion (actions) que obtienen los datos de un pokemon por su id
 export const getPokemonById = (id) => {
     return async function(dispatch){
         const apiData = await axios.get(`http://localhost:3001/pokemons/${id}`);
@@ -23,6 +26,7 @@ export const getPokemonById = (id) => {
     }
 }
 
+// Funcion (actions) que obtienen los datos de un pokemon por su nombre
 export const getPokemonByName = (name) => {
     return async function(dispatch){
         const apiData = await axios.get(`http://localhost:3001/pokemons?name=${name}`);
@@ -31,13 +35,4 @@ export const getPokemonByName = (name) => {
     }
 }
 
-export const sortPokemons = (sortBy, sortOrder) => {
-    return {
-      type: SORT_POKEMONS,
-      payload: {
-        sortBy,
-        sortOrder,
-      },
-    };
-  };
 
