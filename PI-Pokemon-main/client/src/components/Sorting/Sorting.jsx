@@ -2,7 +2,7 @@ const Sorting = () => {
 
     return (
         <div>
-            <h1>Sorting</h1>
+            <h4>Sorting</h4>
         </div>
     
 )}
