@@ -1,26 +1,22 @@
 // Importaciones varias
+import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Card.module.css';
-import {Link} from 'react-router-dom';
 
-// Componente Card
-const Card = (props) => {
-    // Extrayendo los tipos de Pokémon
-    const types = props.types.join(", ");
+const Card = ({ pokemon }) => {
+  const { id, img, name, type } = pokemon;
 
-    return (
-        <div className={styles.Card}>
-            {/* Link a la ruta /home/id */}
-           <Link to={`/home/${props.id}`} className={styles.link}>
-           <div className={styles["img-container"]}>
-                {/* Imagen del Pokémon */}
-                <img src={props.img} alt="Pokemon"/>
-           </div>
-           {/* Nombre y tipos del Pokémon */}
-           <p className={styles.name}>Name: {props.name}</p>
-           <p className={styles.info}>Types: {types}</p>
-           </Link>
+  return (
+    <div className={styles.Card}>
+      <Link to={`/home/${id}`} className={styles.link}>
+        <div className={styles['img-container']}>
+          <img src={img} alt="Pokemon" />
         </div>
-    )
-}
+        <p className={styles.name}>Name: {name}</p>
+        <p className={styles.info}>Types: {type.join(', ')}</p>
+      </Link>
+    </div>
+  );
+};
 
 export default Card;

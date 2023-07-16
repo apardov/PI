@@ -10,7 +10,7 @@ const Navbar = () => {
             <h1>Pokemon App</h1>
             {/* Links a las rutas /home y /form */}
             <Link className={styles.link} to="/home">Home</Link>
-            <Link className={styles.link} to="/form">Form</Link>
+            <Link className={styles.link} to="/form">Create Pokemon</Link>
         </div>
     );
 };
