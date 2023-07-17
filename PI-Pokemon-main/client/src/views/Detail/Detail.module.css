@@ -1,8 +1,8 @@
 .DetailContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 2rem;
+  max-width: 550px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
 }
 
 .DetailContainer h1 {
@@ -17,54 +17,114 @@
   width: 25rem;
   border: 3px solid #FFD700;
   text-align: center;
+  margin: 0 auto;
 }
 
-.DetailContainer .card {
-  width: 600px;
-  background-color: #DC143C;
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  background-color: #FFD700;
   border-radius: 20px;
   padding: 20px;
-  margin: 10px;
-  text-align: center;
-  border: 3px solid #4169E1;
+  border: 5px solid #DC143C;
 }
 
-.DetailContainer .card:hover {
-  border: 3px solid #FFD700;
+.pokemonDetail {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: #DC143C;
 }
 
-.DetailContainer .card .name {
-  font-weight: bold;
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #FFD700;
+  border-radius: 20px;
+  padding: 20px;
+  border: 5px solid #DC143C;
+}
+
+.imageContainer img {
+  max-width: 350px;
+  height: auto;
+}
+
+.name {
   font-size: 24px;
+  font-weight: bold;
   margin-bottom: 10px;
   color: #FFD700;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', sans-serif;
-}
-
-.DetailContainer .card .info {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: #FFD700;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', sans-serif;
-}
-
-.DetailContainer .card .img-container {
-  width: 100%;
-  height: 300px; /* Ajusta la altura según tus necesidades */
-  overflow: hidden;
-  border-radius: 20px;
+  border-radius: 12px;
   border: 3px solid #FFD700;
-  background-color: #FFD700;
+  width: fit-content;
+  padding: 0.5rem;
+  margin: 0.5rem auto;
 }
 
-.DetailContainer .card .img-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  background-color: #FFD700;
+.info {
+  font-size: 18px;
+  color: #FFD700;
+  background-color: #DC143C;
+  border-radius: 12px;
+  border: 3px solid #DC143C;
+  width: fit-content;
+  padding: 0.8rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', sans-serif;
+  width: 20rem;
+  text-align: center;
+  margin: 0.5rem auto;
+  font-weight: bold;
 }
 
-.DetailContainer .link {
-  text-decoration: none;
+.typesContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5rem;
+  border-radius: 12px;
+  border: 3px solid #DC143C;
+  background-color: #DC143C;
+  width: 20rem;
+  height: 4rem;
+  padding: 0.7rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', sans-serif;
+  margin: 0.5rem auto;
+  font-weight: bold;
 }
+
+.types {
+  font-size: 18px;
+  color: #FFD700;
+  padding: 0.8rem;
+  margin-right: 0.5rem;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: inline;
+  font-size: 18px;
+  color: #FFD700;
+  
+}
+
+li:not(:last-child)::after {
+  content: ", ";
+  margin-right: 5px;
+}
+
+
+
+
+
+
+

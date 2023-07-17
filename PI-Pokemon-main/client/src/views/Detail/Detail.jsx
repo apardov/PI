@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import Navbar from "../../components/Navbar/Navbar";
 import { useDispatch, useSelector } from "react-redux";
-import { getPokemonById } from "../../redux/actions";
 import { useParams } from "react-router-dom";
+import Navbar from "../../components/Navbar/Navbar";
+import { getPokemonById } from "../../redux/actions";
 import styles from "./Detail.module.css";
 
 const Detail = () => {
@@ -18,25 +18,32 @@ const Detail = () => {
     <div>
       <Navbar />
       <div className={styles.DetailContainer}>
-        <h1>Pokemon Details</h1>
-        <div className={`${styles.card} card`}>
-          <div className="img-container">
+        <h1>Pokemon Info</h1>
+        <div className={styles.pokemonDetail}>
+          <div className={styles.imageContainer}>
             <img src={pokemonDetail.img} alt="pokemon" />
           </div>
-          <h2 className="name">Name: {pokemonDetail.name}</h2>
-          <p className="info">ID: {pokemonDetail.id}</p>
-          <p className="info">HP: {pokemonDetail.hp}</p>
-          <p className="info">Attack: {pokemonDetail.attack}</p>
-          <p className="info">Defense: {pokemonDetail.defense}</p>
-          <p className="info">Speed: {pokemonDetail.speed}</p>
-          <p className="info">Height: {pokemonDetail.height}</p>
-          <p className="info">Weight: {pokemonDetail.weight}</p>
-          <h2 className="info">Types</h2>
+          <h2 className={styles.name}>Name: {pokemonDetail.name}</h2>
+          <div className={styles.infoContainer}>
+          <p className={styles.info}>ID : {pokemonDetail.id}</p>
+          <p className={styles.info}>HP : {pokemonDetail.hp}</p>
+          <p className={styles.info}>Attack : {pokemonDetail.attack}</p>
+          <p className={styles.info}>Defense : {pokemonDetail.defense}</p>
+          <p className={styles.info}>Speed : {pokemonDetail.speed}</p>
+          <p className={styles.info}>Height : {pokemonDetail.height}</p>
+          <p className={styles.info}>Weight : {pokemonDetail.weight}</p>
+          <div className={styles.typesContainer}>
+          <h2 className={styles.types}>Type :</h2>
           <ul>
             {pokemonDetail.type?.map((type, index) => (
-              <li key={index} className="info">{type}</li>
+              <li key={index}>
+                {type}
+              </li>
             ))}
           </ul>
+          </div>
+          
+          </div>
         </div>
       </div>
     </div>
@@ -44,4 +51,5 @@ const Detail = () => {
 };
 
 export default Detail;
+
 
