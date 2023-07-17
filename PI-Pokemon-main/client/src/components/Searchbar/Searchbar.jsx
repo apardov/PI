@@ -23,11 +23,13 @@ const Searchbar = () => {
     setSearch(""); // Limpiando la entrada de búsqueda después de enviar el formulario
     };
 
-    useEffect(() => { // Hook para establecer el estado de no encontrado
-    if (allPokemons.length === 0) { // Si no hay Pokémon en el estado de Redux
-      setNotFound(true); // Estableciendo el estado de no encontrado en verdadero si no se encuentra ningún Pokémon
-    }
-  }, [allPokemons]); 
+    useEffect(() => {
+        if (allPokemons.length === 0) {
+          setNotFound(true); // Establecer el estado de error si no se encuentra ningún Pokémon
+        } else {
+          setNotFound(false); // Restablecer el estado de error si se encuentra algún Pokémon
+        }
+      }, [allPokemons]);
 
     return (
         <div>
@@ -47,7 +49,7 @@ const Searchbar = () => {
                 </form>
             </div>
                 { /* Mensaje de error si no se encuentra ningún Pokémon */}
-            {notFound && <p className={styles.NotFoundMessage}>Pokémon not found.</p>}
+            {notFound && <p className={styles.NotFoundMessage}>Pokémon not found!</p>}
         </div>
     
 )}

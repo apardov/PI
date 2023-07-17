@@ -1,15 +1,14 @@
-// importaciones de librerias
 import { Link } from 'react-router-dom';
+import styles from './Landing.module.css';
 
-// Landing page
+
 const Landing = () => {
     return (
-        <div>
-            <h1>Landing</h1>
-            {/* boton con link a home */}
-            <button>
-                <Link to="/home">Let's Go</Link>
-            </button>
+        <div className={styles.landingContainer}>
+            {/* Botón con enlace a home */}
+            <div className={styles.landingButton}>
+                <Link to="/home" className={styles.landingText}>Let's Go</Link>
+            </div>
         </div>
     )
 }

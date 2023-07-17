@@ -12,7 +12,7 @@ const Card = ({ pokemon }) => {
           <img src={img} alt="Pokemon" />
         </div>
         <p className={styles.name}>Name: {name}</p>
-        <p className={styles.info}>Types: {type.join(', ')}</p>
+        <p className={styles.info}>Type: {type.join(', ')}</p>
       </Link>
     </div>
   );

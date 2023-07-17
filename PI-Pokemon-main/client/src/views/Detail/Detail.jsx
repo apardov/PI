@@ -17,26 +17,31 @@ const Detail = () => {
   return (
     <div>
       <Navbar />
-      <div className={styles.Detail}>
+      <div className={styles.DetailContainer}>
         <h1>Pokemon Details</h1>
-        <h2>Name: {pokemonDetail.name}</h2>
-        <img src={pokemonDetail.img} alt="pokemon" />
-        <h3>ID: {pokemonDetail.id}</h3>
-        <h3>HP: {pokemonDetail.hp}</h3>
-        <h3>Attack: {pokemonDetail.attack}</h3>
-        <h3>Defense: {pokemonDetail.defense}</h3>
-        <h3>Speed: {pokemonDetail.speed}</h3>
-        <h3>Height: {pokemonDetail.height}</h3>
-        <h3>Weight: {pokemonDetail.weight}</h3>
-        <h3>Types</h3>
-        <ul>
-          {pokemonDetail.type?.map((type, index) => (
-            <li key={index}>{type}</li>
-          ))}
-        </ul>
+        <div className={`${styles.card} card`}>
+          <div className="img-container">
+            <img src={pokemonDetail.img} alt="pokemon" />
+          </div>
+          <h2 className="name">Name: {pokemonDetail.name}</h2>
+          <p className="info">ID: {pokemonDetail.id}</p>
+          <p className="info">HP: {pokemonDetail.hp}</p>
+          <p className="info">Attack: {pokemonDetail.attack}</p>
+          <p className="info">Defense: {pokemonDetail.defense}</p>
+          <p className="info">Speed: {pokemonDetail.speed}</p>
+          <p className="info">Height: {pokemonDetail.height}</p>
+          <p className="info">Weight: {pokemonDetail.weight}</p>
+          <h2 className="info">Types</h2>
+          <ul>
+            {pokemonDetail.type?.map((type, index) => (
+              <li key={index} className="info">{type}</li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );
 };
 
 export default Detail;
+

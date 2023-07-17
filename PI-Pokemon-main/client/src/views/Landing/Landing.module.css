@@ -1,0 +1,61 @@
+.landingContainer {
+    background-image: url("../../assets/img/pokemon-influence.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh; /* Establece la altura en un 96% del alto del viewport */
+    width: 100vw; /* Establece la anchura en el 100% del ancho del viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.landingButton {
+    background-color: white;
+    color: red;
+    padding: 69px 33px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 50%; /* Esto hará que el botón tenga forma de círculo */
+    border: none;
+    cursor: pointer;
+    margin-top: 0px;
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de color de fondo */
+
+
+  }
+  
+  .landingButton:hover {
+    background-color: red; /* Cambia el color de fondo a rojo al pasar el cursor */
+  }
+  
+  .landingButton:active {
+    background-color: red; /* Mantiene el color de fondo rojo mientras se mantiene presionado el botón */
+  }
+
+  .landingText {
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-decoration: none;
+    font-family: 'Roboto mono', monospace;
+
+  }
+
+  .landingText:hover {
+    color: #FCC507;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-decoration: none;
+    font-family: 'Roboto mono', monospace;
+
+  }

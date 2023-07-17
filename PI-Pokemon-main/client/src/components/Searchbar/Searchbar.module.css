@@ -1,27 +1,51 @@
+.SearchContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
 .SearchForm {
   display: flex;
   align-items: center;
 }
 
 .SearchInput {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
+  padding: 1rem 2rem;
+  border: 3px solid #4169E1;
+  border-radius: 10px;
+  font-size: 1.1rem;
   margin-right: 0.5rem;
+  width: 100%;
+  color: #4169E1;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', sans-serif;
+}
+
+.SearchInput::placeholder {
+  font-size: 1.1rem;
+  color: #4169E1;
 }
 
 .SearchButton {
-  padding: 0.5rem 1rem;
-  background-color: red;
-  color: #fff;
+  padding: 1rem 2rem;
+  background-color: #DC143C;
+  color: #FFD700;
   border: none;
-  border-radius: 4px;
-  font-size: 1rem;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
   cursor: pointer;
+  border: 3px solid #4169E1;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', sans-serif;
+}
+
+.SearchButton:hover {
+  background-color: #FFD700;
+  color: #4169E1;
 }
 
 .NotFoundMessage {
-  color: red;
+  color: #DC143C;
   font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
 }

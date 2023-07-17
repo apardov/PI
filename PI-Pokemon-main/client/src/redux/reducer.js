@@ -4,9 +4,11 @@ import {
     GET_POKEMON_BY_NAME,
     SET_SELECTED_TYPE,
     GET_TYPES,
-    SET_FILTERED_POKEMONS_BY_TYPE,
     SET_SELECTED_SOURCE,
     SET_FILTERED_POKEMONS_BY_SOURCE,
+    SET_SORTING_ORDER,
+    SET_ATTACK_SORTING_ORDER,
+    SET_CURRENT_PAGE,
   } from './actions';
   
   const initialState = {
@@ -14,9 +16,11 @@ import {
     pokemonDetails: [],
     selectedType: '',
     types: [],
-    filteredPokemonsByType: [],
     selectedSource: '',
     filteredPokemons: [],
+    sortingOrder: '',
+    attackSortingOrder: '',
+    currentPage: 1,
   };
   
   const reducer = (state = initialState, action) => {
@@ -43,11 +47,6 @@ import {
           ...state,
           types: action.payload,
         };
-      case SET_FILTERED_POKEMONS_BY_TYPE:
-        return {
-          ...state,
-          filteredPokemonsByType: action.payload,
-        };
       case SET_SELECTED_SOURCE:
         return {
           ...state,
@@ -57,6 +56,21 @@ import {
         return {
           ...state,
           filteredPokemons: action.payload,
+        };
+      case SET_SORTING_ORDER:
+        return {
+          ...state,
+          sortingOrder: action.payload,
+        };
+      case SET_ATTACK_SORTING_ORDER:
+        return {
+          ...state,
+          attackSortingOrder: action.payload,
+        };
+      case SET_CURRENT_PAGE:
+        return {
+          ...state,
+          currentPage: action.payload,
         };
       default:
         return state;

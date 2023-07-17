@@ -1,75 +1,70 @@
-.Detail {
+.DetailContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 2rem;
+}
+
+.DetailContainer h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', sans-serif;
+  border-radius: 10px;
+  background-color: #DC143C;
+  color: #FFD700;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  width: 25rem;
+  border: 3px solid #FFD700;
+  text-align: center;
+}
+
+.DetailContainer .card {
+  width: 600px;
+  background-color: #DC143C;
+  border-radius: 20px;
   padding: 20px;
-  background-color: #f2f2f2;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  text-align: center;
+  border: 3px solid #4169E1;
 }
 
-.Detail h1 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  color: #e64b4b;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+.DetailContainer .card:hover {
+  border: 3px solid #FFD700;
 }
 
-.Detail h2 {
+.DetailContainer .card .name {
+  font-weight: bold;
   font-size: 24px;
   margin-bottom: 10px;
+  color: #FFD700;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', sans-serif;
 }
 
-.Detail img {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  margin-bottom: 20px;
-  border-radius: 50%;
-  border: 4px solid #e64b4b;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.Detail h3 {
+.DetailContainer .card .info {
   font-size: 18px;
-  margin-bottom: 5px;
-}
-
-.Detail ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.Detail li {
-  font-size: 16px;
-  margin-bottom: 5px;
-}
-
-.Detail .name {
   font-weight: bold;
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: #333333;
-}
-
-.Detail .info {
-  font-size: 16px;
   margin-bottom: 5px;
+  color: #FFD700;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', sans-serif;
 }
 
-.Detail .info span {
-  font-weight: bold;
-  color: #333333;
+.DetailContainer .card .img-container {
+  width: 100%;
+  height: 300px; /* Ajusta la altura según tus necesidades */
+  overflow: hidden;
+  border-radius: 20px;
+  border: 3px solid #FFD700;
+  background-color: #FFD700;
 }
 
-.Detail .info .label {
-  color: #999999;
+.DetailContainer .card .img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: #FFD700;
 }
 
-.Detail .info .label:before {
-  content: attr(data-label);
-  font-weight: bold;
-  margin-right: 5px;
+.DetailContainer .link {
+  text-decoration: none;
 }

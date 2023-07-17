@@ -31,8 +31,34 @@ const Form = () => {
     types: [],
   });
 
+  const resetForm = () => {
+    setPokemonForm({
+      name: "",
+      img: "",
+      hp: "",
+      attack: "",
+      defense: "",
+      speed: "",
+      height: "",
+      weight: "",
+      types: [],
+    });
+    setErrors({
+      name: "",
+      img: "",
+      hp: "",
+      attack: "",
+      defense: "",
+      speed: "",
+      height: "",
+      weight: "",
+      types: [],
+    });
+  };
+
   const [typeOptions, setTypeOptions] = useState([]); // estado inicial de types de pokemon
   const [submitEnabled, setSubmitEnabled] = useState(false); // estado inicial del botón de submit
+  const [success, setSuccess] = useState(false); // estado inicial de la creación exitosa de pokemon
 
   useEffect(() => { // hook de react para ejecutar código cuando se monta el componente
     axios.get("http://localhost:3001/pokemons/types")   // petición get a la ruta /pokemons/types para obtener todos los types de pokemon
@@ -130,17 +156,18 @@ const Form = () => {
       ...pokemonForm, 
       types: selectedOptions,
     });
-  };  
+  };
 
   const handleSubmit = (e) => { // función para manejar el submit del formulario
-    e.preventDefault(); // evitamos que se recargue la página
+    e.preventDefault(); // prevenimos el comportamiento por defecto del submit
     if (submitEnabled && !errors.types) { // validamos que el botón de submit esté habilitado y que no haya errores en el campo types
       axios.post("http://localhost:3001/pokemons", pokemonForm) // hacemos un post a la ruta /pokemons con los datos del pokemon a crear
         .then(() => {
-          alert("Pokemon created successfully");
+          setSuccess(true);
+          resetForm();
         })
         .catch(() => {
-          alert("Error creating pokemon");
+          setSuccess(false);
         });
     }
   };
@@ -274,6 +301,10 @@ const Form = () => {
           )}
           {/* mostramos el error en caso de que exista */}
         </form>
+      </div>
+      <div>
+        {/* mostramos el mensaje de exito en caso de que se cree el pokemon */}
+        { success && <span className={styles.success}>Pokemon created successfully!</span> }
       </div>
     </div>
   );

@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Navbar from "../../components/Navbar/Navbar";
-import Sorting from "../../components/Sorting/Sorting";
 import Searchbar from "../../components/Searchbar/Searchbar";
 import Filters from "../../components/Filters/Filters";
 import CardContainer from "../../components/CardsContainer/CardContainer";
-import Paginated from "../../components/Paginated/Paginated";
 import { getPokemons } from '../../redux/actions';
+import styles from "./Home.module.css";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -17,13 +16,11 @@ const Home = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className={styles.Home}>
       <Navbar />
       <Searchbar />
       <Filters />
-      <Sorting />
       <CardContainer pokemons={allPokemons} />
-      <Paginated />
     </div>
   );
 };
