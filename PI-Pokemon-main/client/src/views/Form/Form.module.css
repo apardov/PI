@@ -1,45 +1,135 @@
 .FormContainer {
-  width: 400px;
-  background-color: #f2f2f2;
-  border-radius: 5px;
-  padding: 20px;
-  margin: 10px auto;
+  max-width: 550px;
+  margin: 0 auto;
+  padding: 30px;
   text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  background-color: #DC143C;
+  color: #FFD700;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border: 3px solid #FFD700;
 }
 
-.FormContainer input[type="text"],
-.FormContainer input[type="number"] {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', sans-serif;
+  border-radius: 10px;
+  background-color: #DC143C;
+  color: #FFD700;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  width: 25rem;
+  border: 3px solid #FFD700;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .FormContainer label {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', sans-serif;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
+  display: block;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  padding: 0.5rem;
+  width: 20rem;
+  margin: 0 auto;
+  color: #FFD700;
+}
+
+.FormContainer input {
+  font-size: 15px;
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: 3px solid #DC143C;
+  background-color: #FFD700;
+  color: #DC143C;
+  margin-bottom: 20px;
+  width: 20rem;
+  margin: 0 auto;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', sans-serif;
   margin-bottom: 5px;
 }
 
-.FormContainer button {
-  background-color: #4caf50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.FormContainer input::placeholder {
+  color: #DC143C;
+  font-size: 15px;
 }
 
-.FormContainer button:hover {
-  background-color: #45a049;
+.FormContainer .error {
+  color: #FFD700;
+  font-size: 14px;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', sans-serif;
+  font-weight: bold;
 }
 
-.FormContainer h1 {
-  font-size: 24px;
+.FormContainer .success {
+  color: #FFD700;
+  font-size: 18px;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 3px solid #FFD700;
+  border-radius: 10px;
+  padding: 0.5rem;
+  width: 20rem;
+  margin: 0 auto;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', sans-serif;
+  font-weight: bold;
+  background-color: #4169E1;
+}
+
+.FormContainer .typesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   margin-bottom: 20px;
+  margin-top: 10px;
 }
+
+.FormContainer .types {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', sans-serif;
+  font-size: 16px;
+  background-color: #FFD700;
+  color: #DC143C;
+  border-radius: 10px;
+  padding: 5px 8px;
+  width: calc(20% - 15px); 
+  border: 3px solid #DC143C;
+}
+
+.FormContainer .types input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.FormContainer .submitButton {
+  background-color: #FFD700;
+  color: #DC143C;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.FormContainer .submitButton:hover {
+  background-color: #4169E1;
+  color: #FFD700;
+}
+
+
+
 
 
   
