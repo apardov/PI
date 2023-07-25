@@ -1,13 +1,16 @@
+// Objetivo: componente para buscar Pokémon por nombre exacto
+
+// Importaciones
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getPokemonByName } from "../../redux/actions";
+import { getPokemonByName, setCurrentPage } from "../../redux/actions";
 import styles from "./Searchbar.module.css";
 
 
 const Searchbar = () => {
 
-    const dispatch = useDispatch();
-    const allPokemons = useSelector((state) => state.pokemons);
+    const dispatch = useDispatch(); // se asigna la funcion usedispatch para ejecutar acciones de forma posterior
+    const allPokemons = useSelector((state) => state.pokemons); // se obtiene el estado de los pokemones
     const [search, setSearch] = useState(""); // Searchbar del estado de búsqueda
     const [notFound, setNotFound] = useState(false); // Inicializando estado de pokemon de no encontrado
 
@@ -21,6 +24,7 @@ const Searchbar = () => {
     e.preventDefault();
     dispatch(getPokemonByName(search)); // Dispatch de la acción para obtener un Pokémon por nombre
     setSearch(""); // Limpiando la entrada de búsqueda después de enviar el formulario
+    dispatch(setCurrentPage(1)); // Reiniciar la página al buscar un Pokémon
     };
 
     useEffect(() => {
@@ -30,6 +34,7 @@ const Searchbar = () => {
           setNotFound(false); // Restablecer el estado de error si se encuentra algún Pokémon
         }
       }, [allPokemons]);
+
 
     return (
         <div>

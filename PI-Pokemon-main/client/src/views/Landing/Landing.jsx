@@ -1,8 +1,11 @@
+//Obejtivo: Vista de la landing page
+
+//import varios
 import { Link } from 'react-router-dom';
 import styles from './Landing.module.css';
 
 
-const Landing = () => {
+const Landing = () => { // Vista de la landing page
     return (
         <div className={styles.landingContainer}>
             {/* Botón con enlace a home */}

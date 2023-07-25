@@ -1,3 +1,5 @@
+//Objetivo : mostrar un navbar con un logo y dos links a home y a form
+
 import { Link } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import logo from "../../assets/img/pokemonHome.png"; // Importa la imagen del logo

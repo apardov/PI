@@ -10,7 +10,7 @@ import store from "./redux/store";
 ReactDOM.render(
 
   <React.StrictMode>
-    <Provider store={store}> {/* proveedor de componentes */}
+    <Provider store={store}> {/* provider  */}
     <BrowserRouter> {/* rutas de componentes */}
     <App /> {/* componente principal */}
     </BrowserRouter>

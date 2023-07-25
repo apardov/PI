@@ -1,5 +1,8 @@
+// Objetivo: Crear el modelo de la tabla Pokemon en la base de datos
+
 const { DataTypes } = require('sequelize');
 
+// defino el modelo de la tabla Pokemon
 module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('Pokemons', {
@@ -13,7 +16,7 @@ module.exports = (sequelize) => {
     allowNull: false,
   },
   img: {
-    type: DataTypes.STRING,
+    type: DataTypes.TEXT,
     allowNull: false,
   },
   hp: {
