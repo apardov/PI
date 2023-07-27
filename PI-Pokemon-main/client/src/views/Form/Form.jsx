@@ -61,7 +61,7 @@ const Form = () => {
   const [success, setSuccess] = useState(false); // Estado inicial si pokemon se creó correctamente
 
   useEffect(() => { // Obtener los tipos de pokemon
-    axios.get("http://localhost:3001/pokemons/types")
+    axios.get("/pokemons/types")
       .then((response) => {
         setTypeOptions(response.data.map((type) => type.name));
       })
@@ -162,7 +162,7 @@ const Form = () => {
   const handleSubmit = (e) => { // Manejar el submit del formulario
     e.preventDefault();
     if (submitEnabled && !errors.types) { // Si el submit está habilitado y no hay errores en los tipos, crear el pokemon
-      axios.post("http://localhost:3001/pokemons", pokemonForm)
+      axios.post("/pokemons", pokemonForm)
         .then(() => {
           setSuccess(true); // Si el pokemon se creó correctamente, mostrar mensaje de éxito
           resetForm(); // Reiniciar el formulario

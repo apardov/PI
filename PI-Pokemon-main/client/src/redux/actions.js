@@ -18,7 +18,7 @@ export const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 export const getPokemons = () => { // obtiene los pokemons del servidor 
   return async function (dispatch) {
     try {
-      const apiData = await axios.get('http://localhost:3001/pokemons');  // obtiene los pokemons del servidor
+      const apiData = await axios.get('/pokemons');  // obtiene los pokemons del servidor
       const pokemonsData = apiData.data; // guarda los pokemons en una variable
       dispatch({ type: GET_POKEMONS, payload: pokemonsData }); // actualiza el estado de la aplicación
     } catch (error) {
@@ -30,7 +30,7 @@ export const getPokemons = () => { // obtiene los pokemons del servidor
 export const getPokemonById = (id) => { // obtiene un pokemon por id
   return async function (dispatch) {
     try {
-      const apiData = await axios.get(`http://localhost:3001/pokemons/${id}`); // obtiene un pokemon por id
+      const apiData = await axios.get(`/pokemons/${id}`); // obtiene un pokemon por id
       const pokemonData = apiData.data; // guarda el pokemon en una variable
       dispatch({ type: GET_POKEMON_BY_ID, payload: pokemonData }); // actualiza el estado de la aplicación
     } catch (error) {
@@ -42,7 +42,7 @@ export const getPokemonById = (id) => { // obtiene un pokemon por id
 export const getPokemonByName = (name) => { // obtiene un pokemon por nombre
   return async function (dispatch) {
     try {
-      const apiData = await axios.get(`http://localhost:3001/pokemons?name=${name}`); // obtiene un pokemon por nombre
+      const apiData = await axios.get(`/pokemons?name=${name}`); // obtiene un pokemon por nombre
       const pokemonData = apiData.data; // guarda el pokemon en una variable
       dispatch({ type: GET_POKEMON_BY_NAME, payload: pokemonData }); // actualiza el estado de la aplicación
     } catch (error) {
@@ -54,7 +54,7 @@ export const getPokemonByName = (name) => { // obtiene un pokemon por nombre
 export const getTypes = () => { // obtiene los tipos de pokemon
   return async function (dispatch) {
     try {
-      const apiData = await axios.get('http://localhost:3001/pokemons/types'); // obtiene los tipos de pokemon
+      const apiData = await axios.get('/pokemons/types'); // obtiene los tipos de pokemon
       const typesData = apiData.data.map((type) => ({ // guarda los tipos de pokemon en una variable
         id: type.id,
         name: type.name,
